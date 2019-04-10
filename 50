@@ -1,0 +1,5 @@
+x = input('Vvedite chislo: ')
+if x > 50:
+  print("x bol'she 50")
+else
+  print('x men'she 50')
