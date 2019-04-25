@@ -1,5 +1,4 @@
 #   http://py4e-data.dr-chuck.net/comments_42.html
-
 # To run this, you can install BeautifulSoup
 # https://pypi.python.org/pypi/beautifulsoup4
 
@@ -18,15 +17,21 @@ ctx.verify_mode = ssl.CERT_NONE
 
 url = input('Enter - ')
 # url = urllib.request.urlopen('http://py4e-data.dr-chuck.net/comments_42.html')
-url = 'http://py4e-data.dr-chuck.net/comments_42.html'
+if len(url.strip()) == 0:
+    url = 'http://py4e-data.dr-chuck.net/comments_42.html'
 
 html = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(html, 'html.parser')
-print(soup)
+# print(soup)
 tags = soup('a')
-for tag in tags:
-    print(tag.get("comments", None))
 
+# for tag in tags:
+#     print(tag)
+
+
+# for line in soup:
+#     soup.head.nextSibling.comments
+#     print(prettify(line))
 
 # for line in soup:
 #     print(line)
